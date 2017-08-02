@@ -7,8 +7,7 @@
 from scrapy.exceptions import DropItem
 from scrapy.exporters import CsvItemExporter
 
-
-class StockratingPipeline(object):
+class Sp500Pipeline(object):
     def process_item(self, item, spider):
         if not all(item.values()):
             raise DropItem("Missing values!")
@@ -18,7 +17,7 @@ class StockratingPipeline(object):
 class WriteItemPipeline(object):
 
     def __init__(self):
-        self.filename = 'ratings.csv'
+        self.filename = 'sp500.csv'
 
     def open_spider(self, spider):
         self.csvfile = open(self.filename, 'wb')
@@ -32,3 +31,5 @@ class WriteItemPipeline(object):
     def process_item(self, item, spider):
         self.exporter.export_item(item)
         return item
+
+

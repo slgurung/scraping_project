@@ -8,13 +8,11 @@
 from scrapy import Item, Field
 
 
-class StockratingItem(Item):
-    ratingDate = Field()
-    company = Field()
+class Sp500Item(Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    name = Field()
     ticker = Field()
-    brokerageFirm = Field()
-    rating_from = Field()
-    rating = Field()
-    ratingClass = Field()
-    target = Field()
-    target_from = Field()
+    sector = Field()
+    industry = Field()
+    cik = Field()

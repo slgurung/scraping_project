@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for stockRating project
+# Scrapy settings for sp500 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'stockRating'
+BOT_NAME = 'sp500'
 
-SPIDER_MODULES = ['stockRating.spiders']
-NEWSPIDER_MODULE = 'stockRating.spiders'
+SPIDER_MODULES = ['sp500.spiders']
+NEWSPIDER_MODULE = 'sp500.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'stockRating (+http://www.yourdomain.com)'
+#USER_AGENT = 'sp500 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True
@@ -27,7 +27,7 @@ NEWSPIDER_MODULE = 'stockRating.spiders'
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -47,13 +47,13 @@ NEWSPIDER_MODULE = 'stockRating.spiders'
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'stockRating.middlewares.StockratingSpiderMiddleware': 543,
+#    'sp500.middlewares.Sp500SpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'stockRating.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'sp500.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,8 +65,8 @@ NEWSPIDER_MODULE = 'stockRating.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'stockRating.pipelines.StockratingPipeline': 100,
-    'stockRating.pipelines.WriteItemPipeline': 200
+	'sp500.pipelines.Sp500Pipeline': 100,
+	'sp500.pipelines.WriteItemPipeline': 200
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
